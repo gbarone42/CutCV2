@@ -1,15 +1,15 @@
 # CutCV2
 
-#### Rifinitura bordo scuro
+#### Rifinitura bordo scuro ImageMagick
+
+###### Prerequisites - Python 3.x: The script is compatible with Python 3. Ensure Python 3 is installed on your system.
 
 # Final Crop : Image Cropper Tool
 
-**`final_crop.py`** is a versatile Python script designed for cropping images. Utilizing the Wand library, a Python binding for ImageMagick, this tool enables precise cropping from any of the four sides (top, bottom, left, right) of an image. The script can handle individual files or process an entire directory of images, making it suitable for both single edits and batch processing tasks.
+**`final_crop.py`** is a Python script designed for cropping images. Utilizing the Wand library enables precise cropping from any of the four sides (top, bottom, left, right) of an image. The script can handle individual files or process an entire directory of images, making it suitable for both single edits and batch processing tasks.
 
-#### Prerequisites
-Before using `final_crop.py`, ensure you have the following installed:
+#### Prerequisites, ensure you have the following installed:
 
-- Python 3.x: The script is compatible with Python 3. Ensure Python 3 is installed on your system.
 - ImageMagick: This is a dependency for Wand, used for image manipulation.
 - Wand: A Python library that provides the bindings for ImageMagick.
 
@@ -22,8 +22,8 @@ For Ubuntu/Debian:
 ``` bash
 sudo apt-get install imagemagick
 ```
-For other operating systems:
-Please refer to the ImageMagick documentation for installation instructions.
+###### For other operating systems:
+###### Please refer to the ImageMagick documentation for installation instructions.
 
 #### Step 2: Install Wand
 After installing ImageMagick, install Wand using pip:
@@ -32,14 +32,13 @@ pip install wand
 ```
 
 #### Usage
-final_crop.py is designed to be straightforward and user-friendly. The following details how to use the script:
+The following details how to use the script:
 
 #### Command Format
 
 ``` bash
 python final_crop.py <path_to_image_or_directory> <output_path> <sides> <trim_pixels>
 ```
-
 
 
 
@@ -51,8 +50,6 @@ python final_crop.py <path_to_image_or_directory> <output_path> <sides> <trim_pi
 - <trim_pixels>: The number of pixels to trim from each specified side.
 
 #### Examples
-Cropping a Single Image
-To crop 10 pixels from the top of example.jpg and save the cropped image in the current directory:
 
 ``` bash
 python final_crop.py example.jpg ./ "top" 10
@@ -62,10 +59,16 @@ python final_crop.py example.jpg ./ "top" 10
 python final_crop.py /path/to/images /path/to/output "bottom" 20
 ```
 
+``` bash
+python final_crop.py example.jpg ./ "top,bottom" 10,20
+```
+
+``` bash
+python final_crop.py /path/to/image.jpg /path/to/output top,bottom,left,right 10,15,5,20
+```
 
 #### Troubleshooting
-Check ImageMagick Installation: Ensure that ImageMagick is correctly installed and accessible in your system's PATH.
-Verify Wand Installation: Confirm that Wand is installed correctly by running:
+Ensure that ImageMagick is correctly installed and accessible in your system's PATH. Confirm that Wand is installed correctly by running:
 
 ``` bash
 python -c "import wand"
@@ -75,28 +78,24 @@ python -c "import wand"
 
 # Final CV2: Image Border Analysis Tool
 
-**final_cv2.py** is an advanced Python script designed to analyze the borders of grayscale images to detect the intensity of lighting and sort images into categorized folders based on their border lighting conditions. This script is particularly useful for processing large volumes of images where automated sorting can save substantial time and effort.
+**final_cv2.py** is designed to analyze the borders of grayscale images to detect the intensity of lighting and sort images into categorized folders based on their border lighting conditions.
 
-## Prerequisites
-Before using `final_cv2.py`, ensure you have the following installed:
+#### Prerequisites, ensure you have the following installed:
 
-- Python 3.x: The script is compatible with Python 3.
 - OpenCV (cv2): A library used for computer vision and image processing.
 - NumPy: Essential for numerical operations on image arrays.
 
 ## Installation
-### Step 1: Install Python 3
-Ensure Python 3 is installed on your system. It can be installed from the official Python website or via a package manager on Linux.
 
-### Step 2: Install OpenCV
-OpenCV can be installed using pip. Run the following command:
+### Install OpenCV
+Run the following command:
 
 ``` bash
 pip install opencv-python-headless
 ```
 
-#### Step 3: Install NumPy
-NumPy can also be installed via pip if it's not already installed:
+### Install NumPy
+
 ``` bash
 pip install numpy
 ```
@@ -111,7 +110,7 @@ pip install numpy
 - shutil: Used for high-level file operations, such as copying files.
 
 #### Usage
-final_cv2.py is designed to be user-friendly and can be executed from the command line. It requires a single argument: the path to the directory containing the images to be processed.
+It requires a single argument from the command line: the path to the directory containing the images to be processed.
 
 #### Command Format
 ``` bash
@@ -143,7 +142,7 @@ Upon execution, final_cv2.py creates three folders within the specified director
 Images are sorted into these directories based on the analysis results.
 
 #### Troubleshooting
-Ensure Dependencies Are Installed: Verify that both OpenCV and NumPy are correctly installed by running:
+Verify that both OpenCV and NumPy are correctly installed by running:
 ``` bash
 python -c "import cv2; import numpy"
 ```
