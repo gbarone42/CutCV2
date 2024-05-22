@@ -65,47 +65,12 @@ pip install wand
 python -c "import wand"
 ```
 
-#### License
-final_crop.py and final_cv2.py is released under the MIT License. This license allows free use, modification, and distribution, with the only requirement being to include the original license and copyright notice in any copy of the software/source code.
-
-
-
 # Final CV2: Image Border Analysis Tool
 
 **final_cv2.py** is designed to analyze the borders of grayscale images to detect the intensity of lighting and sort images into categorized folders based on their border lighting conditions.
 
-#### Prerequisites, ensure you have the following installed:
-
-- OpenCV (cv2): A library used for computer vision and image processing.
-- NumPy: Essential for numerical operations on image arrays.
-
-## Installation
-
-### Install OpenCV
-Run the following command:
-
-``` bash
-pip install opencv-python-headless
-```
-
-### Install NumPy
-
-``` bash
-pip install numpy
-```
-
-
-#### Imports and Dependencies
-- cv2: This is the OpenCV library used for image processing.
-- numpy: Used for numerical operations on arrays.
-- sys: To interact with the system (used here for command-line arguments).
-- os: To interact with the operating system, particularly for file and directory operations.
-- glob: To find all the pathname matching a specified pattern.
-- shutil: Used for high-level file operations, such as copying files.
 
 #### Usage
-It requires a single argument from the command line: the path to the directory containing the images to be processed.
-
 #### Command Format
 ``` bash
 python final_cv2.py <path_to_folder>
@@ -122,23 +87,28 @@ python3 bin/demo/final_cv2.py to_be_cropped
 
 #### How It Works
 Image Loading: The script loads each image in the specified directory as a grayscale image using OpenCV.
-Border Analysis: Analyzes the left and right 100-pixel wide borders of each image to determine the average pixel intensity.
-Classification and Sorting: Based on the intensity analysis, images are classified and moved to specific folders:
-Images with both borders darker than a set threshold are moved to a 'uniform' folder.
-Images with one border significantly lighter are moved to either 'left' or 'right' folders.
+Border Analysis: Analyzes the left and right 100-pixel wide borders of each image to determine the average pixel intensity, based on the intensity analysis, images are classified and moved to specific folders:
+Images with both borders darker than a set threshold are moved to a '@Non_Legato' folder.
+Images with one border significantly lighter are moved to either '@Right_Legato' or '@Left_Legato' folder.
 
-#### Directory Structure
-Upon execution, final_cv2.py creates three folders within the specified directory:
-
-@Left_Legato
-@Right_Legato
-@Non_Legato
-Images are sorted into these directories based on the analysis results.
 
 #### Troubleshooting
 Verify that both OpenCV and NumPy are correctly installed by running:
 ``` bash
 python -c "import cv2; import numpy"
+```
+
+#### Prerequisites, ensure you have the following installed:
+
+- OpenCV (cv2): A library used for computer vision and image processing.
+- NumPy: Essential for numerical operations on image arrays.
+
+
+#### Install OpenCV and NumPy
+
+``` bash
+pip install opencv-python-headless
+pip install numpy
 ```
 
 #### License
@@ -149,7 +119,6 @@ final_crop.py and final_cv2.py is released under the MIT License. This license a
 ## Ambiente di Sviluppo
 
 Server `mw-pvebk.bncf.lan` IP `192.168.8.19` Utente `barone`
-
 
 # Virtual Env
 
