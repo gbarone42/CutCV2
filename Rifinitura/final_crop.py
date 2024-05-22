@@ -11,15 +11,15 @@ def crop_image(image_path, output_dir, sides, trim_pixels):
         original_width, original_height = img.width, img.height
         left, top, right, bottom = 0, 0, original_width, original_height
 
-        for side in sides:
+        for side, trim in zip(sides, trim_pixels):
             if side == 'top':
-                top += trim_pixels
+                top += trim
             elif side == 'bottom':
-                bottom -= trim_pixels
+                bottom -= trim
             elif side == 'left':
-                left += trim_pixels
+                left += trim
             elif side == 'right':
-                right -= trim_pixels
+                right -= trim
 
         img.crop(left, top, right, bottom)
         filename = os.path.basename(image_path)
@@ -28,6 +28,7 @@ def crop_image(image_path, output_dir, sides, trim_pixels):
         img.save(filename=output_file_path)
         print(f"Image saved as {output_file_path}")
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 5:
         print("Usage: python my_image_cutter.py <path_to_image_or_directory> <output_path> <sides> <trim_pixels>")
@@ -35,7 +36,7 @@ if __name__ == "__main__":
     
     input_path, output_path, sides_str, trim_pixels = sys.argv[1:]
     sides = sides_str.split(',')
-    trim_pixels = int(trim_pixels)
+    trim_pixels = [int(p.strip()) for p in trim_pixels.split(',')]
     if os.path.isdir(input_path):
         for filename in os.listdir(input_path):
             file_path = os.path.join(input_path, filename)
