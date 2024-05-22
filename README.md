@@ -4,76 +4,37 @@
 
 ###### Prerequisites - Python 3.x: The script is compatible with Python 3. Ensure Python 3 is installed on your system.
 
-# Final Crop : Image Cropper Tool
+Image Cropper Tool¶
+final_crop.py is a Python script designed for cropping images.
 
-**`final_crop.py`** is a Python script designed for cropping images. Utilizing the Wand library enables precise cropping from any of the four sides (top, bottom, left, right) of an image. The script can handle individual files or process an entire directory of images, making it suitable for both single edits and batch processing tasks.
-
-#### Prerequisites, ensure you have the following installed:
-
-- ImageMagick: This is a dependency for Wand, used for image manipulation.
-- Wand: A Python library that provides the bindings for ImageMagick.
-
-#### Installation
-
-#### Step 1: Install ImageMagick
-ImageMagick must be installed first since it is required by the Wand library. Installation instructions vary based on the operating system:
-
-For Ubuntu/Debian:
-``` bash
-sudo apt-get install imagemagick
-```
-###### For other operating systems:
-###### Please refer to the ImageMagick documentation for installation instructions.
-
-#### Step 2: Install Wand
-After installing ImageMagick, install Wand using pip:
-``` bash
-pip install wand
-```
-
-#### Usage
-The following details how to use the script:
-
-#### Command Format
-
-``` bash
+Usage
+Command Format
 python final_crop.py <path_to_image_or_directory> <output_path> <sides> <trim_pixels>
-```
-
-
-
-#### Arguments:
-
-- <path_to_image_or_directory>: The file path to an image or a directory containing images.
-- <output_path>: The directory where cropped images will be stored.
-- <sides>: Comma-separated list of sides from which to crop the image. Valid options include 'top', 'bottom', 'left', 'right'.
-- <trim_pixels>: The number of pixels to trim from each specified side.
-
-#### Examples
-
-``` bash
+Arguments:
+<path_to_image_or_directory>: The file path to an image or a directory containing images.
+<output_path>: The directory where cropped images will be stored.
+: Comma-separated list of sides from which to crop the image. Valid options include 'top', 'bottom', 'left', 'right'.
+<trim_pixels>: The number of pixels to trim from each specified side.
+Examples
 python final_crop.py example.jpg ./ "top" 10
-```
-
-``` bash
 python final_crop.py /path/to/images /path/to/output "bottom" 20
-```
-
-``` bash
 python final_crop.py example.jpg ./ "top,bottom" 10,20
-```
-
-``` bash
 python final_crop.py /path/to/image.jpg /path/to/output top,bottom,left,right 10,15,5,20
-```
 
-#### Troubleshooting
-Ensure that ImageMagick is correctly installed and accessible in your system's PATH. Confirm that Wand is installed correctly by running:
-
-``` bash
+The output is formatted to show the width and height in pixels followed by the horizontal and vertical DPI
+identify -format "%wx%h %x x %y DPI\n" exampleimage.tif
+Prerequisites, ensure you have the following installed:
+ImageMagick: This is a dependency for Wand, used for image manipulation.
+Wand: A Python library that provides the bindings for ImageMagick.
+Installation
+Step 1: Install ImageMagick
+sudo apt-get install imagemagick
+Step 2: Install Wand
+pip install wand
+Troubleshooting
 python -c "import wand"
-```
-
+License
+final_crop.py and final_cv2.py is released under the MIT License. This license allows free use, modification, and distribution, with the only requirement being to include the original license and copyright notice in any copy of the software/source code.
 
 
 # Final CV2: Image Border Analysis Tool
