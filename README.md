@@ -121,17 +121,9 @@ final_crop.py and final_cv2.py is released under the MIT License. This license a
 Server `mw-pvebk.bncf.lan` IP `192.168.8.19` Utente `barone`
 
 # Virtual Env
-
-Using a virtual environment in Python development, such as through commands like source ~/venv/bin/activate or source ~/myenv/bin/activate, is a widely adopted practice. Here’s why developers use virtual environments and the benefits they offer:
-
 Reason for Using Virtual Environments
 
 Ensures consistency across development, testing, and production environments, reducing the "works on my machine" problem where code runs well in one environment but has issues in another due to differences in package versions.
-
-With virtual environments, you can easily add, update, or remove packages without risking the integrity of other projects or the system-wide Python installation.
-
-When working in a team, virtual environments ensure that all developers work with the same setup, making it easier to share code and minimize conflicts. Typically, a requirements.txt file is used alongside the virtual environment to keep track of the project's dependencies.
-
 Virtual environments allow users to install new packages and manage existing ones without needing administrative access. This is especially useful in shared or managed computing environments.
 
 Creating and Activating a Virtual Environment
