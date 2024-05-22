@@ -122,13 +122,8 @@ Server `mw-pvebk.bncf.lan` IP `192.168.8.19` Utente `barone`
 
 # Virtual Env
 Reason for Using Virtual Environments
-
 Ensures consistency across development, testing, and production environments, reducing the "works on my machine" problem where code runs well in one environment but has issues in another due to differences in package versions.
-Virtual environments allow users to install new packages and manage existing ones without needing administrative access. This is especially useful in shared or managed computing environments.
-
 Creating and Activating a Virtual Environment
-
-
 Install the virtualenv Package (if it’s not installed):
 
 ``` bash
